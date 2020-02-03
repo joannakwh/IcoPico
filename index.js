@@ -1,27 +1,5 @@
-/**
- * Server database
- *
-**/
-
 const express = require('express');
-const mysql = require('mysql');
 const app = express();
-
-// Create connection
-const db = mysql.createConnection({
-    host     : 'remotemysql.com',
-    user     : 'JBLUFDmAIL',
-    password : '6g5HLkJiSe',
-    database : 'JBLUFDmAIL'
-});
-
-// Connect
-db.connect(function (err) {
-    if (err) {
-        return console.error('error: ' + err.message);
-    }
-    console.log("Long live firebase...");
-});
 
 app.use(express.static('./'));
 app.use(express.static('/src'));
